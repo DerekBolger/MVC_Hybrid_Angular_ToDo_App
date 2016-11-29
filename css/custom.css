@@ -1,0 +1,327 @@
+/**********************************************************
+* Author: Derek Bolger
+* Assignment: WE4 Mobile Web Applications, Digital Skills Academy
+* Student ID Derek Bolger: D14127405
+* Date: 22/06/2016
+* Ref: https://docs.angularjs.org/api/ngAnimate
+* Ref: https://docs.angularjs.org/api/ng/directive/ngClass
+***********************************************************/
+
+/*=================================================================================================================
+	Change the bootstrap toggle breakpoint. //Code reuse: WE4.0_A_IWP_derekbolger_workshop_22_BootstrapComponents III
+------------------------------------------------------------------------------------------------------------------*/
+@media (max-width: 2000px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left,.navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+  .navbar-nav {
+    float: none!important;
+    margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+    float: none;
+  }
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .collapse.in{
+    display:block !important;
+  }
+}
+
+/*========================================================================
+	Style nav toggle menus
+-------------------------------------------------------------------------*/
+.navbar-default .navbar-toggle {
+  color:  #111761;
+  border-color:  #111761;
+  padding: 8px 10px 8px 10px;
+  font-size: 18px;
+  margin-left: 14px;
+}
+.navbar-default {
+  background-color: #fff;
+  border-color: #e7e7e7;
+}
+
+/*===========================================================
+  Style footer
+------------------------------------------------------------*/
+footer{
+  width:100%;
+  min-height:50px;    
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
+/* Centerand Style Github Icon In footer */
+.col-lg-12 i {
+  display:block;
+  text-align:center
+}
+footer > div > div > a > i {
+  font-size: 40px !important;
+  color:  #111761;
+  padding-top: 2px;
+}
+footer > div > div > a > i:hover {
+  color: #333333;
+}
+.jumbotron {
+  margin-top: 90px;
+  overflow: hidden;
+}
+
+/*===========================================================
+  Add css classes for page transition of views, could have 
+  used animate.css but chose to try my own for practice.
+  Ref: https://docs.angularjs.org/api/ngAnimate
+------------------------------------------------------------*/
+.slide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.slide.ng-enter,
+.slide.ng-leave {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.slide.ng-enter {
+  left: 100%;
+}
+.slide.ng-enter-active {
+  left: 0;
+}
+.slide.ng-leave {
+  left: 0;
+}
+.slide.ng-leave-active {
+  left: -100%;
+}
+/* Stops initial page flicker of transitions */
+.slide.ng-enter-prepare {
+  opacity: 0;
+}
+
+/* Same transition as above but using animate.css */
+/*.slide.ng-enter {
+  animation: slidInLeft 1s;
+}
+
+.slide.ng-leave {
+  animation: slidOutRight 1s;
+}*/
+
+/*========================================================================
+  Home Page Styles
+-------------------------------------------------------------------------*/
+.jumbotron {
+  background-color: #fff;
+  margin-top: 80px;
+}
+.home-p {
+  margin-top: 20px;
+  color: #fff;
+}
+.home-icon {
+  margin-top: 20px;
+}
+
+/*========================================================================
+	To Do Page Styles
+-------------------------------------------------------------------------*/
+/* Resetting box sizing to border box */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  background: #111761;
+}
+/* Positioning of the main container optimised for mobile */
+.container {
+  height: 80%;
+  max-width: 500px;
+  width: 100%;
+  padding: 0px 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.todo-header {
+  color: #fff;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+  text-align: center;
+  margin-top: 40px;
+}
+.todo-p {
+  color: #fff;
+  text-align: center;
+}
+.container .todo-list .head {
+  position: relative;
+}
+.container .todo-list .head:before, body .container .todo-list .head:after {
+  content: "";
+  display: table;
+}
+.container .todo-list .head:after {
+  clear: both;
+}
+/* Styling and positioning for form input */
+.container .todo-list .head .text-input {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  line-height: 40px;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0 0 10px;
+  border: 0;
+  padding: 0 14px;
+  outline: 0;
+  color: #000000;
+  background: #fff;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.97);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.97);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.97);
+}
+.container .todo-list .head ::-webkit-input-placeholder {
+  color: #000000;
+  opacity: 1;
+}
+.container .todo-list .head ::-moz-placeholder {
+  color: #000000;
+  opacity: 1;
+}
+.container .todo-list .head ::-ms-input-placeholder {
+  color: #000000;
+  opacity: 1;
+}
+.container .todo-list .head .submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  color: #111761;
+  margin-top: 6px;
+  cursor: pointer;
+  outline: 0;
+}
+.container .todo-list .items {
+  margin: 0;
+  padding: 0;
+}
+/* Styling for generated items lists */
+.container .todo-list .items li {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0 20px 0 40px;
+  color: #333;
+  overflow: hidden;
+  background: #fff;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.97);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.97);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.97);
+}
+/* classes to be added when ng- class activates */
+.container .todo-list .items li.completed {
+  color: #333333;
+  text-decoration: line-through;
+}
+.container .todo-list .items li.completed span {
+  background: #333333;
+}
+.container .todo-list .items li span {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 24px;
+  text-align: center;
+  display: block;
+  background: #111761;
+  -moz-border-radius: 10%;
+  -webkit-border-radius: 10%;
+  border-radius: 10%;
+}
+.container .todo-list .items li .trash {
+  color: #000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  display: block;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+.container .todo-list .items li .complete {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  display: block;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+.container .todo-list .items .complete {
+  padding-top: 2px;
+}

@@ -1,0 +1,38 @@
+<!-- =======================================================
+* Author: Derek Bolger
+* Assignment: WE4 Mobile Web Applications, Digital Skills Academy
+* Student ID Derek Bolger: D14127405
+* Date: 22/06/2016
+* Ref: https://docs.angularjs.org/api/ng/directive/ngModel
+* Ref: https://docs.angularjs.org/guide/templates
+* Ref: https://docs.angularjs.org/guide/directive
+* Ref: https://docs.angularjs.org/api/ng/directive/ngClass
+============================================================ -->
+
+<div class="container">
+      <h1 class="todo-header">{{ todomessage }}</h1>
+      <p class="todo-p">{{ todomessage2 }}</p>
+        <div class="todo-list" ng-controller="todoCtrl">
+          <div class="head">
+            <form ng-submit="submitNewItem();">
+              <!-- The ng-model directive binds an input item to a property on the scope, which 
+              is created and exposed by this directive for two-way data binding -->
+              <input type="text" placeholder="Add an item to do" class="text-input" ng-model="newItem">
+                <div class="submit" ng-click="submitNewItem();">
+                  <i class="fa fa-plus"></i>
+                </div>
+            <form>
+        </div>
+
+        <ul class="items">
+          <!-- ng-class is used with directives to toggle which font awesome icon is displayed if task is completed or !completed -->
+          <!-- {{$index + 1}} is used to auto increment the list by 1 for each item  -->
+          <li ng-repeat="item in items" ng-class="{'completed': item.status == 'completed'}"><span>{{$index + 1}}</span>{{item.todo}}
+            <i class="fa fa-trash-o trash" ng-click="deleteItem($index);"></i>
+            <i class="fa complete" ng-class="{'fa-check': item.status == 'completed', 'fa-check-square-o': item.status != 'completed'}" 
+               ng-click="completeItem($index);"></i>
+          </li>
+        </ul>
+
+    </div>
+</div>

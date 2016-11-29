@@ -1,0 +1,73 @@
+<!Doctype html>
+<!-- =======================================================
+* Author: Derek Bolger
+* Assignment: WE4 Mobile Web Applications, Digital Skills Academy
+* Student ID Derek Bolger: D14127405
+* Date: 22/06/2016
+* Ref: https://docs.angularjs.org/api/ngAnimate
+* Ref: https://docs.angularjs.org/api/ngRoute/directive/ngView
+==========================================================-->
+
+<html lang="en" data-ng-app="myModule">
+
+	<head>
+		<meta charset="utf-8">
+		<title>To Do App</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+		<!-- Load bootstrap, custom css & font awesome -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css" />  
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		
+	</head>
+
+	<body data-ng-controller="mainController">
+		<!-- Persistant Navigation Menu
+    	==========================================-->
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+
+				<a href="#/" type="button" class="navbar-toggle pull-left">
+					<span class="fa fa-home"></span>
+				</a>
+
+				<a href="#todo" type="button" class="navbar-toggle">
+					<span class="fa fa-check""></span>
+				</a>
+				
+			</div>
+		</nav>
+
+		<!-- This is where the views will be injected, Code reuse: WE4.0_A_MWA_workshop_08_Passing Data In Angular
+    	==========================================================================================================-->
+		<div id="main">
+
+			<div class="slide" data-ng-view></div>
+
+		</div>
+
+		<!-- Persistent footer
+    	==============================================-->
+		<footer class="footer navbar-default  navbar-fixed-bottom">
+		    <div class="container">
+		     	<div class="col-lg-12">
+		     		<a href="https://github.com/MrWebelevate"><i class="fa fa-github github"></i></a>
+		     	</div>
+		    </div>
+		</footer>
+
+		<!-- Load angular and dependancies
+    	==============================================-->
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/angular-route.min.js"></script>
+		<script type="text/javascript" src="modules/myModule.js"></script>
+		<script type="text/javascript" src="controllers/todoController.js"></script>
+		<script type="text/javascript" src="js/angular-animate.min.js"></script>
+		<script type="text/javascript" src="js/ngStorage.min.js"></script>
+		<script type="text/javascript" src='phonegap.js'></script>
+		
+	</body>
+
+</html>
